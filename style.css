@@ -11,6 +11,12 @@ h1 {
     padding: 0px;
 }
 
+h3 {
+    padding:10px;
+    border-radius: 3px;
+    background-color: azure;
+}
+
 ul {
     list-style-type: none;
     margin: 0px;
@@ -29,6 +35,12 @@ nav {
 li {
     float: left;
     width: 100%;
+}
+
+li a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 a {
@@ -125,12 +137,6 @@ tr:nth-child(even):hover {
 .topo-botoes {
     padding: 5px 0px 5px 0px;
     text-align: center;
-}
-
-.topo-botoes-texto {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2rem;
-    text-transform: uppercase;
 }
 
 .topo-botoes:hover {

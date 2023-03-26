@@ -14,12 +14,11 @@
                 <?php 
                     require_once("funcoes.php");
                     if(validarSessao()) { ?>    
-                        <li class="topo-botoes"><a class="topo-botoes-texto" href="cadpessoa.php">Pessoas</a></li>
-                        <li class="topo-botoes"><a class="topo-botoes-texto" href="cadstatus.php">Status</a></li>
-                        <li class="topo-botoes"><a class="topo-botoes-texto" href="cadturma.php">Turmas</a></li>
-                        <li class="topo-botoes"><a class="topo-botoes-texto" href="cadlocal.php">Unidades</a></li>
-                        <!-- <li class="topo-botoes"><a href="listarpessoas.php">Listar Pessoas</a></li> -->
-                        <li class="topo-botoes"><a class="topo-botoes-texto" href="logout.php">Deslogar</a></li>
+                        <li class="topo-botoes"><a href="cadpessoa.php">Pessoas</a></li>
+                        <li class="topo-botoes"><a href="cadstatus.php">Status</a></li>
+                        <li class="topo-botoes"><a href="cadturma.php">Turmas</a></li>
+                        <li class="topo-botoes"><a href="cadlocal.php">Unidades</a></li>
+                        <li class="topo-botoes"><a href="logout.php">Deslogar</a></li>
                 <?php } ?>
             </ul>
         </nav>
