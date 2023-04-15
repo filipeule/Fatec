@@ -1,8 +1,8 @@
 <?php
     require_once("topo.php");
 ?>
-    <div class="cadastroForm">
-        <h3 class="formulario">Login de Cornos</h3>
+    <fieldset class="cadastroForm">
+        <legend class="formulario">Login de Cornos</legend>
         <form name="form1" action="iniciarsessao.php" method="post">
             <div class="formulario">
                 <div class="campos">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </form>
-    </div>
+    </fieldset>
     <?php
     require_once("base.php");
 ?>

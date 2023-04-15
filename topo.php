@@ -14,11 +14,40 @@
                 <?php 
                     require_once("funcoes.php");
                     if(validarSessao()) { ?>    
-                        <li class="topo-botoes"><a href="cadpessoa.php">Pessoas</a></li>
-                        <li class="topo-botoes"><a href="cadstatus.php">Status</a></li>
-                        <li class="topo-botoes"><a href="cadturma.php">Turmas</a></li>
-                        <li class="topo-botoes"><a href="cadlocal.php">Unidades</a></li>
-                        <li class="topo-botoes"><a href="logout.php">Deslogar</a></li>
+                        <li class="topo-botoes">
+                            <a>Pessoas</a>
+                            <ul class="submenu-list">
+                                <li><a href="cadpessoa.php">Cadastrar</a></li>
+                                <li><a href="listarpessoas.php">Listar</a></li>
+                                <li><a href="consultarpessoas.php">Consultar</a></li>
+                            </ul>
+                        </li>
+                        <li class="topo-botoes">
+                            <a href="">Status</a>
+                            <ul class="submenu-list">
+                                <li><a href="cadstatus.php">Cadastrar</a></li>
+                                <li><a href="">Listar</a></li>
+                            </ul>
+                        </li>
+                        <li class="topo-botoes">
+                            <a href="">Turmas</a>
+                            <ul class="submenu-list">
+                                <li><a href="cadturma.php">Cadastrar</a></li>
+                                <li><a href="">Listar</a></li>
+                                <li><a href="">Consultar</a></li>
+                            </ul>
+                        </li>
+                        <li class="topo-botoes">
+                            <a href="">Unidades</a>
+                            <ul class="submenu-list">
+                                <li><a href="cadlocal.php">Cadastrar</a></li>
+                                <li><a href="">Listar</a></li>
+                                <li><a href="">Consultar</a></li>
+                            </ul>
+                        </li>
+                        <li class="topo-botoes">
+                            <a href="logout.php">Deslogar</a>
+                        </li>
                 <?php } ?>
             </ul>
         </nav>

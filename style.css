@@ -5,7 +5,18 @@ body {
     background-color: lightgray;
 }
 
+fieldset {
+    border: 2px solid;
+    margin: 0px;
+}
+
 h1 {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+h2 {
     margin: 0px;
     border: 0px;
     padding: 0px;
@@ -62,12 +73,18 @@ p {
 }
 
 table {
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
     background-color: blanchedalmond;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+caption h2 {
+    display: inline;
+    padding: 0px 10px;
+    background-color: white;
 }
 
 tr {
@@ -79,10 +96,22 @@ tr:hover {
     background-color: darkgrey;
 }
 
+th {
+    width: 200px;
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+}
+
 td {
     width: 200px;
     padding: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img {
+    height: auto;
+    width: 10%;
 }
 
 tr:nth-child(even) {
@@ -110,7 +139,7 @@ tr:nth-child(even):hover {
     align-items: center;
     flex-direction: column;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 10px 10px 12px 12px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     row-gap: 10px;
 }
@@ -164,17 +193,6 @@ tr:nth-child(even):hover {
     cursor: pointer;
 }
 
-.form-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    row-gap: 10px;
-}
-
 .campo-tabela {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
@@ -205,6 +223,10 @@ tr:nth-child(even):hover {
     background-color: blanchedalmond;
     padding: 10px;
     border-radius: 0px 0px 10px 10px;
+    border-color: lightgray;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-clip: padding-box;
 }
 
 #usuario {
@@ -214,3 +236,42 @@ tr:nth-child(even):hover {
     background-color: blanchedalmond;
     border-radius: 0px 0px 5px 0px;
 }
+
+.cabecalho {
+    display: inline-block;
+  }
+  
+  .cabecalho ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cabecalho li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .cabecalho a {
+    display: block;
+    text-decoration: none;
+  }
+  
+  .submenu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: darkslateblue;
+  }
+  
+  .topo-botoes:hover .submenu-list {
+      display: block;
+    }
+
+  .submenu-list li {
+      padding: 5px 0px;
+  }
+  .submenu-list li:hover {
+      background-color: darkorange;
+  }

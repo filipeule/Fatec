@@ -2,8 +2,8 @@
     require_once("topo.php");
     if(@validarSessao()) {
 ?>
-    <div class="cadastroForm">
-        <h3 class="formulario">Cadastro de Status</h3>
+    <fieldset class="cadastroForm">
+        <legend class="formulario">Cadastro de Status</legend>
         <form name="form1" action="inserirstatus.php" method="post">
             <div class="formulario">
                 <div class="campos">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </form>
-    </div>
+    </fieldset>
 <?php
     } else {
     echo "<p>Conecte-se para visualizar esta página.</p>";

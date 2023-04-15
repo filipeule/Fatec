@@ -2,8 +2,8 @@
     require_once("topo.php");
     if(@validarSessao()) {
 ?>
-    <div class="cadastroForm">
-        <h3 class="formulario">Cadastro de Unidades Chifrudas</h3>
+    <fieldset class="cadastroForm">
+        <legend class="formulario">Cadastro de Unidades Chifrudas</legend>
         <form name="form1" action="inserirlocal.php" method="post">
             <div class="formulario">
                 <div class="campos">
@@ -27,7 +27,7 @@
                     <input class="botoes" type="reset" value="Cancelar">
                 </div>
             </div>
-    </div>
+    </fieldset>
     </form>
 
 <?php

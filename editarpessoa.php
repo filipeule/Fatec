@@ -4,8 +4,8 @@
 
     $usuario = $conn->query("SELECT * FROM cornos WHERE id = {$_GET['id']}")->fetch(PDO::FETCH_ASSOC);
 
-    echo "<div class='cadastroForm'>
-            <h3 class='formulario'>Editar Corno</h3>
+    echo "<fieldset class='cadastroForm'>
+            <legend class='formulario'>Editar Corno</legend>
             <form name='form1' action='inserirpessoa.php' method='post'>
                 <div class='formulario'>
                     <div class='campos'>
@@ -29,7 +29,7 @@
                         <input class='botoes' type='reset' value='Cancelar'>
                     </div>
                 </div>
-        </div>
+        </fieldset>
         </form>";
 
     require_once("base.php");
