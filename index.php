@@ -1,9 +1,12 @@
 <?php
-    require_once("topo.php");
+
+require_once($_SERVER['DOCUMENT_ROOT']."/sistema_corno/common/header.php");
+
 ?>
+
     <fieldset class="cadastroForm">
         <legend class="formulario">Login de Cornos</legend>
-        <form name="form1" action="iniciarsessao.php" method="post">
+        <form name="form1" action="/sistema_corno/cuckolds/routines/startsession.php" method="post">
             <div class="formulario">
                 <div class="campos">
                     <label class="labels" for="email">Email</label>
@@ -20,6 +23,9 @@
             </div>
         </form>
     </fieldset>
-    <?php
-    require_once("base.php");
+
+<?php
+
+require_once($_SERVER['DOCUMENT_ROOT']."/sistema_corno/common/footer.php");
+
 ?>

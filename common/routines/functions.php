@@ -15,4 +15,5 @@ function validarSessao() {
         return true;
     }
 }
+
 ?>
