@@ -10,43 +10,43 @@ $consulta = $conn->query("SELECT * FROM cornos");
 <?php if (@validarSessao()): ?>
    <table>
       <caption>
-         <h2>Lista de Pessoas</h2>
+         Lista de Pessoas
       </caption>
-      <tr>
-         <th>ID</th>
-         <th>Nome</th>
-         <th>Email</th>
-         <th>CPF</th>
-         <th>Telefone</th>
-         <th class='jogar-pra-direita'>Editar</th>
-         <th class='jogar-pra-direita'>Excluir</th>
-      </tr>
-
-      <?php while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)): ?>
+      <thead>
          <tr>
-            <td>
-               <?= $linha['id'] ?>
-            </td>
-            <td>
+            <th id='name'>Nome</th>
+            <th id='email'>Email</th>
+            <th id='personal_id'>CPF</th>
+            <th id='phone'>Telefone</th>
+            <th id='edit' class='jogar-pra-direita'>Editar</th>
+            <th id='delete' class='jogar-pra-direita'>Excluir</th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <?php while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)): ?>
+            <tr>
+               <td headers='name'>
                <?= $linha['nome'] ?>
             </td>
-            <td>
+            <td headers='email'>
                <?= $linha['email'] ?>
             </td>
-            <td>
+            <td headers='personal_id'>
                <?= $linha['cpf'] ?>
             </td>
-            <td>
+            <td headers='phone'>
                <?= $linha['telefone'] ?>
             </td>
-            <td>
-               <a href="/sistema_corno/people/personedit.php?id=<?= $linha['id'] ?>" alt='Editar' title='Editar'><span class='campo-tabela jogar-pra-direita'><img src='/sistema_corno/assets/img/edit.png' /></span></a>
+            <td headers='edit'>
+               <a href="/sistema_corno/people/personedit.php?id=<?= $linha['id'] ?>" alt='Editar' title='Editar' class='campo-tabela jogar-para-direita'><img src='/sistema_corno/assets/img/edit.png' /></a>
             </td>
-            <td>
-               <a href="/sistema_corno/people/persondelete.php?id=<?= $linha['id'] ?>" alt='Exluir' title='Excluir'><span class='campo-tabela jogar-pra-direita'><img src='/sistema_corno/assets/img/delete.png' /></span></a>
+            <td headers='delete'>
+               <a href="/sistema_corno/people/persondelete.php?id=<?= $linha['id'] ?>" alt='Exluir' title='Excluir' class='campo-tabela jogar-para-direita'><img src='/sistema_corno/assets/img/delete.png' /></a>
             </td>
          </tr>
-      <?php endwhile; ?>
+         <?php endwhile; ?>
+      </tbody>
 
    </table>
 <?php else: ?>

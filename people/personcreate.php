@@ -9,7 +9,7 @@ $consulta = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
 
 <?php if (@validarSessao()): ?>
    <fieldset class="cadastroForm">
-      <legend class="formulario">Cadastro de Cornos</legend>
+      <legend>Cadastro de Cornos</legend>
       <form name="form1" action="/sistema_corno/people/routines/insertperson.php" method="post">
          <div class="formulario">
             <div class="campos">
@@ -38,7 +38,7 @@ $consulta = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
             </div>
             <div class="campos">
                <label class="labels" for="id_tipo_corno" data-placeholder="Escolha o tipo do chifrudo">Tipo Corno</label>
-               <select name="id_tipo_corno" id="seletorCadTurma">
+               <select class="campo" name="id_tipo_corno" id="seletorCadTurma">
                <?php foreach ($consulta as $linha): ?>
                   <option value="<?= $linha['id'] ?>"><?= $linha['descricao'] ?></option>
                <?php endforeach; ?>
