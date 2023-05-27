@@ -27,6 +27,13 @@ function isAdmin()
     return $userType == 1;
 }
 
-function havePermission() {
-    
+function getPermissionLevel($secao, $campo) {
+    require($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
+    echo $secao;
+    echo $campo;
+    $userLevel = $conn->query("SELECT id_tipo_corno FROM cornos WHERE id = ". $_SESSION['idUsuario'])->fetchAll()[0][0];
+    echo $userLevel;
+    $sql = "SELECT pc.nivel_acesso FROM tipos_corno c, permissoes p, permissoes_tipos_corno pc WHERE c.id = pc.id_tipo_corno AND p.id_permissao = pc.id_permissao AND c.id =" .  $userLevel . " AND p.secao = '" . $secao . "' AND p.campo = '" . $campo . "'";
+    $permissionLevel = $conn->query($sql)->fetchAll()[0][0];
+    return $permissionLevel;
 }

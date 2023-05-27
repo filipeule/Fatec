@@ -136,7 +136,7 @@ Aluno:
         - CPF: None
         - Telefone: None
         - Endereco: None
-        - Tipo Corno: R
+        - Tipo Corno: None
     Cursos:
         - Nome: R
         - Quantidade Ciclos: R

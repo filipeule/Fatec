@@ -12,6 +12,9 @@ if (isset($_POST['nome'])) {
 
 $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
 
+$permissionLevel = getPermissionLevel('Cornos', 'Tipo Corno');
+echo $permissionLevel;
+
 ?>
 
 <fieldset class='cadastroForm'>
@@ -42,7 +45,7 @@ $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
             <label class='labels' for='telefone'>Endereço</label>
             <input class='campo' type='text' name='endereco' placeholder='  Digite seu endereço:' required maxlength='100' value="<?= $usuario['endereco'] ?>">
          </div>
-         <?php if(!isAdmin()): ?>
+         <?php if($permissionLevel == 1 or $permissionLevel == 3): ?>
          <div class="campos">
                <label class="labels" for="id_tipo_corno" data-placeholder="Escolha o tipo do chifrudo">Tipo Corno</label>
                <select name="id_tipo_corno" id="seletorCadTurma" value="<?= $tipoCorno[$usuario['id_tipo_corno']] ?>">
