@@ -2,6 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functions.php");
 
 if (isset($_POST['nome'])) {
    $usuario = $conn->query("SELECT * FROM cornos WHERE nome LIKE '%{$_POST['nome']}%'")->fetch(PDO::FETCH_ASSOC);
@@ -41,6 +42,7 @@ $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
             <label class='labels' for='telefone'>Endereço</label>
             <input class='campo' type='text' name='endereco' placeholder='  Digite seu endereço:' required maxlength='100' value="<?= $usuario['endereco'] ?>">
          </div>
+         <?php if(!isAdmin()): ?>
          <div class="campos">
                <label class="labels" for="id_tipo_corno" data-placeholder="Escolha o tipo do chifrudo">Tipo Corno</label>
                <select name="id_tipo_corno" id="seletorCadTurma" value="<?= $tipoCorno[$usuario['id_tipo_corno']] ?>">
@@ -48,7 +50,8 @@ $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
                   <option value="<?= $tipo['id'] ?>"><?= $tipo['descricao'] ?></option>
                <?php endforeach; ?>
                </select>
-            </div>
+         </div>
+         <?php endif; ?>
          <div class='listaBotoes'>
             <input class='botoes' type='submit' value='Confirmar'>
             <input class='botoes' type='reset' value='Cancelar'>

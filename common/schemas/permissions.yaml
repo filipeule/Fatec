@@ -1,0 +1,156 @@
+Administrador:
+    Cornos:
+        - Nome: RW
+        - Email: RW
+        - CPF: RW
+        - Telefone: RW
+        - Endereco: RW
+        - Tipo Corno: RW
+    Cursos:
+        - Nome: RW
+        - Quantidade Ciclos: RW
+        - Status: RW
+        - Duracao: RW
+        - Nivel: RW
+    Turmas:
+        - Numero Turma: R
+        - Ciclo: RW
+        - Periodo: RW
+        - Curso: RW
+        - Local: RW
+    Locais:
+        - Nome: RW
+        - Endereco: RW
+        - Telefone: RW
+        - Responsavel: RW
+    
+
+Diretor:
+    Cornos:
+        - Nome: RW
+        - Email: RW
+        - CPF: RW
+        - Telefone: RW
+        - Endereco: RW
+        - Tipo Corno: R
+    Cursos:
+        - Nome: RW
+        - Quantidade Ciclos: RW
+        - Status: RW
+        - Duracao: RW
+        - Nivel: RW
+    Turmas:
+        - Numero Turma: R
+        - Ciclo: R
+        - Periodo: R
+        - Curso: R
+        - Local: R
+    Locais:
+        - Nome: R
+        - Endereco: R
+        - Telefone: RW
+        - Responsavel: R
+
+Coordenador:
+    Cornos:
+        - Nome: R
+        - Email: R
+        - CPF: None
+        - Telefone: R
+        - Endereco: None
+        - Tipo Corno: R
+    Cursos:
+        - Nome: R
+        - Quantidade Ciclos: R
+        - Status: R
+        - Duracao: R
+        - Nivel: R
+    Turmas:
+        - Numero Turma: R
+        - Ciclo: R
+        - Periodo: R
+        - Curso: R
+        - Local: R
+    Locais:
+        - Nome: R
+        - Endereco: R
+        - Telefone: R
+        - Responsavel: R
+
+Professor:
+    Cornos:
+        - Nome: R
+        - Email: R
+        - CPF: None
+        - Telefone: None
+        - Endereco: None
+        - Tipo Corno: R
+    Cursos:
+        - Nome: R
+        - Quantidade Ciclos: R
+        - Status: R
+        - Duracao: R
+        - Nivel: R
+    Turmas:
+        - Numero Turma: R
+        - Ciclo: R
+        - Periodo: R
+        - Curso: R
+        - Local: R
+    Locais:
+        - Nome: R
+        - Endereco: R
+        - Telefone: R
+        - Responsavel: R
+
+Secretário:
+    Cornos:
+        - Nome: RW
+        - Email: RW
+        - CPF: RW
+        - Telefone: RW
+        - Endereco: RW
+        - Tipo Corno: R
+    Cursos:
+        - Nome: R
+        - Quantidade Ciclos: R
+        - Status: R
+        - Duracao: R
+        - Nivel: R
+    Turmas:
+        - Numero Turma: R
+        - Ciclo: R
+        - Periodo: R
+        - Curso: R
+        - Local: R
+    Locais:
+        - Nome: R
+        - Endereco: R
+        - Telefone: RW
+        - Responsavel: R
+
+Aluno:
+    Cornos:
+        - Nome: R
+        - Email: R
+        - CPF: None
+        - Telefone: None
+        - Endereco: None
+        - Tipo Corno: R
+    Cursos:
+        - Nome: R
+        - Quantidade Ciclos: R
+        - Status: R
+        - Duracao: R
+        - Nivel: R
+    Turmas:
+        - Numero Turma: None
+        - Ciclo: None
+        - Periodo: None
+        - Curso: None
+        - Local: None
+    Locais:
+        - Nome: R
+        - Endereco: R
+        - Telefone: R
+        - Responsavel: R
