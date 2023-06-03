@@ -3,39 +3,72 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 
+$sql = "UPDATE cornos SET ";
+$nomeSet = isset($_POST['nome']);
+$emailSet = isset($_POST['email']);
+$cpfSet = isset($_POST['cpf']);
+$telefoneSet = isset($_POST['telefone']);
+$enderecoSet = isset($_POST['endereco']);
+$idTipoCornoSet = isset($_POST['id_tipo_corno']);
+$idSet = isset($_POST['id']);
+$count = 1;
+
+if ($nomeSet)
+  $sql .= "nome = ?, ";
+if ($emailSet)
+  $sql .= "email = ?, ";
+if ($cpfSet)
+  $sql .= "cpf = ?, ";
+if ($telefoneSet)
+  $sql .= "telefone = ?, ";
+if ($enderecoSet)
+  $sql .= "endereco = ?, ";
+if ($idTipoCornoSet)
+  $sql .= "id_tipo_corno = ?, ";
+
+$sql = rtrim($sql, ", \t\n");
+
+if ($idSet) {
+  $sql .= "WHERE id = ?";
+}
+
+$stmt = $conn->prepare($sql);
+if ($nomeSet) {
+  $stmt->bindParam($count, $_POST['nome'], PDO::PARAM_STR);
+  $count++;
+}
+if ($emailSet) {
+  $stmt->bindParam($count, $_POST['email'], PDO::PARAM_STR);
+  $count++;
+}
+if ($cpfSet) {
+  $stmt->bindParam($count, $_POST['cpf'], PDO::PARAM_STR);
+  $count++;
+}
+if ($telefoneSet) {
+  $stmt->bindParam($count, $_POST['telefone'], PDO::PARAM_STR);
+  $count++;
+}
+if ($enderecoSet) {
+  $stmt->bindParam($count, $_POST['endereco'], PDO::PARAM_STR);
+  $count++;
+}
+if ($idTipoCornoSet) {
+  $stmt->bindParam($count, $_POST['id_tipo_corno'], PDO::PARAM_INT);
+  $count++;
+}
+if ($idSet) {
+  $stmt->bindParam($count, $_POST['id'], PDO::PARAM_INT);
+  $count++;
+}
+$success = $stmt->execute();
+
 ?>
-
-<?php if (isset($_POST['id']) && isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['cpf']) && isset($_POST['telefone']) && isset($_POST['endereco']) && isset($_POST['id_tipo_corno'])): ?>
-   <?php
-   $varUsuarioId = $_POST['id'];
-   $varNome = $_POST['nome'];
-   $varEmail = $_POST['email'];
-   $varCpf = $_POST['cpf'];
-   $varTelefone = $_POST['telefone'];
-   $varEndereco = $_POST['endereco'];
-   $varIdTipoCorno = $_POST['id_tipo_corno'];
-
-   $sql = "UPDATE cornos SET nome = ?, email = ?, cpf = ?, telefone = ?, endereco = ?, id_tipo_corno = ? WHERE id = ?";
-
-   $stmt = $conn->prepare($sql);
-   $stmt->bindParam(1, $varNome, PDO::PARAM_STR);
-   $stmt->bindParam(2, $varEmail, PDO::PARAM_STR);
-   $stmt->bindParam(3, $varCpf, PDO::PARAM_STR);
-   $stmt->bindParam(4, $varTelefone, PDO::PARAM_STR);
-   $stmt->bindParam(5, $varEndereco, PDO::PARAM_STR);
-   $stmt->bindParam(6, $varIdTipoCorno, PDO::PARAM_INT);
-   $stmt->bindParam(7, $varUsuarioId, PDO::PARAM_INT);
-   $stmt->execute();
-
-   ?>
-   <?php if ($stmt->execute() === TRUE): ?>
-      <p>Registro atualizado com sucesso! Clique <a class="linkVoltar" href="/sistema_corno/people/peoplelist.php">aqui</a> para voltar.</p>
-   <?php else: ?>
-      <p>Erro ao atualizar registro: <?= $stmt->error ?></p>
-   <?php endif; ?>
-<?php else: ?>
-   <p>Algo de errado não está certo. Clique <a class="linkVoltar" href="/sistema_corno/people/peoplelist.php">aqui</a> para voltar.</p>
-<?php endif; ?>
+  <?php if ($success): ?>
+    <p>Registro atualizado com sucesso! Clique <a class="linkVoltar" href="/sistema_corno/people/peoplelist.php">aqui</a> para voltar.</p>
+  <?php else: ?>
+    <p>Erro ao atualizar registro: <?= $stmt->error ?></p>
+  <?php endif; ?>
 
 <?php
 

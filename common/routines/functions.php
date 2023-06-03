@@ -20,13 +20,6 @@ function validarSessao()
   }
 }
 
-function isAdmin()
-{
-  require($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
-  $userType = $conn->query("SELECT id_tipo_corno FROM cornos WHERE id = " . $_SESSION['idUsuario'])->fetchAll()[0][0];
-  return $userType == 1;
-}
-
 function getPermissionLevel($secao, $campo)
 {
   require($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
@@ -43,6 +36,34 @@ function checkFieldDisabled($secao, $campo)
     $disabled = '';
   }
   return $disabled;
+}
+
+function checkSelected($id, $otherId)
+{
+  $selected = '';
+  if ($id == $otherId) {
+    $selected = 'selected';
+  }
+  return $selected;
+}
+
+function getInfo($field, $table, $targetColumn, $target)
+{
+  require($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
+  $info = $conn->query("SELECT $field FROM $table WHERE $targetColumn = '$target'")->fetch()[0];
+  return $info;
+}
+
+function getCuckoldTypeById($id)
+{
+  $cuckoldType = getInfo('descricao', 'tipos_corno', 'id', $id);
+  return $cuckoldType;
+}
+
+function getCuckoldTypeId($target)
+{
+  $targetId = getInfo('id', 'tipos_corno', 'descricao', $target);
+  return $targetId;
 }
 
 function haveReadPermission($secao, $campo)

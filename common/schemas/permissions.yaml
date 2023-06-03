@@ -1,156 +1,269 @@
 Administrador:
-    Cornos:
-        - Nome: RW
-        - Email: RW
-        - CPF: RW
-        - Telefone: RW
-        - Endereco: RW
-        - Tipo Corno: RW
-    Cursos:
-        - Nome: RW
-        - Quantidade Ciclos: RW
-        - Status: RW
-        - Duracao: RW
-        - Nivel: RW
-    Turmas:
-        - Numero Turma: R
-        - Ciclo: RW
-        - Periodo: RW
-        - Curso: RW
-        - Local: RW
-    Locais:
-        - Nome: RW
-        - Endereco: RW
-        - Telefone: RW
-        - Responsavel: RW
-    
+  Cornos:
+    Nome: RW
+    Email: RW
+    CPF: RW
+    Telefone: RW
+    Endereco: RW
+    Tipo Corno: RW
+    Criar: W
+    Listar: RW
+    Excluir: W
+  Cursos:
+    Nome: RW
+    Quantidade Ciclos: RW
+    Status: RW
+    Duracao: RW
+    Nivel: RW
+    Criar: W
+    Listar: RW
+    Excluir: W
+  Turmas:
+    Numero Turma: R
+    Ciclo: RW
+    Periodo: RW
+    Curso: RW
+    Local: RW
+    Criar: W
+    Listar: RW
+    Excluir: W
+  Locais:
+    Nome: RW
+    Endereco: RW
+    Telefone: RW
+    Responsavel: RW
+    Criar: W
+    Listar: RW
+    Excluir: W
+  Tipos Corno:
+    Administrador: R
+    Diretor: RW
+    Coordenador: RW
+    Professor: RW
+    Secretário: RW
+    Aluno: RW
 
 Diretor:
-    Cornos:
-        - Nome: RW
-        - Email: RW
-        - CPF: RW
-        - Telefone: RW
-        - Endereco: RW
-        - Tipo Corno: R
-    Cursos:
-        - Nome: RW
-        - Quantidade Ciclos: RW
-        - Status: RW
-        - Duracao: RW
-        - Nivel: RW
-    Turmas:
-        - Numero Turma: R
-        - Ciclo: R
-        - Periodo: R
-        - Curso: R
-        - Local: R
-    Locais:
-        - Nome: R
-        - Endereco: R
-        - Telefone: RW
-        - Responsavel: R
+  Cornos:
+    Nome: RW
+    Email: RW
+    CPF: RW
+    Telefone: RW
+    Endereco: RW
+    Tipo Corno: R
+    Criar: W
+    Listar: RW
+    Excluir: W
+  Cursos:
+    Nome: RW
+    Quantidade Ciclos: RW
+    Status: RW
+    Duracao: RW
+    Nivel: RW
+    Criar: None
+    Listar: RW
+    Excluir: None
+  Turmas:
+    Numero Turma: R
+    Ciclo: R
+    Periodo: R
+    Curso: R
+    Local: R
+    Criar: W
+    Listar: RW
+    Excluir: W
+  Locais:
+    Nome: R
+    Endereco: R
+    Telefone: RW
+    Responsavel: R
+    Criar: None
+    Listar: RW
+    Excluir: None
+  Tipos Corno:
+    Administrador: None
+    Diretor: R
+    Coordenador: RW
+    Professor: RW
+    Secretário: RW
+    Aluno: RW
 
 Coordenador:
-    Cornos:
-        - Nome: R
-        - Email: R
-        - CPF: None
-        - Telefone: R
-        - Endereco: None
-        - Tipo Corno: R
-    Cursos:
-        - Nome: R
-        - Quantidade Ciclos: R
-        - Status: R
-        - Duracao: R
-        - Nivel: R
-    Turmas:
-        - Numero Turma: R
-        - Ciclo: R
-        - Periodo: R
-        - Curso: R
-        - Local: R
-    Locais:
-        - Nome: R
-        - Endereco: R
-        - Telefone: R
-        - Responsavel: R
+  Cornos:
+    Nome: R
+    Email: R
+    CPF: None
+    Telefone: R
+    Endereco: None
+    Tipo Corno: R
+    Criar: None
+    Listar: None
+    Excluir: None
+  Cursos:
+    Nome: R
+    Quantidade Ciclos: R
+    Status: R
+    Duracao: R
+    Nivel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Turmas:
+    Numero Turma: R
+    Ciclo: R
+    Periodo: R
+    Curso: R
+    Local: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Locais:
+    Nome: R
+    Endereco: R
+    Telefone: R
+    Responsavel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Tipos Corno:
+    Administrador: None
+    Diretor: None
+    Coordenador: R
+    Professor: R
+    Secretário: R
+    Aluno: R
 
 Professor:
-    Cornos:
-        - Nome: R
-        - Email: R
-        - CPF: None
-        - Telefone: None
-        - Endereco: None
-        - Tipo Corno: R
-    Cursos:
-        - Nome: R
-        - Quantidade Ciclos: R
-        - Status: R
-        - Duracao: R
-        - Nivel: R
-    Turmas:
-        - Numero Turma: R
-        - Ciclo: R
-        - Periodo: R
-        - Curso: R
-        - Local: R
-    Locais:
-        - Nome: R
-        - Endereco: R
-        - Telefone: R
-        - Responsavel: R
+  Cornos:
+    Nome: R
+    Email: R
+    CPF: None
+    Telefone: None
+    Endereco: None
+    Tipo Corno: R
+    Criar: None
+    Listar: None
+    Excluir: None
+  Cursos:
+    Nome: R
+    Quantidade Ciclos: R
+    Status: R
+    Duracao: R
+    Nivel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Turmas:
+    Numero Turma: R
+    Ciclo: R
+    Periodo: R
+    Curso: R
+    Local: R
+    Criar: None
+    Listar: None
+    Excluir: None
+  Locais:
+    Nome: R
+    Endereco: R
+    Telefone: R
+    Responsavel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Tipos Corno:
+    Administrador: None
+    Diretor: None
+    Coordenador: None
+    Professor: None
+    Secretário: None
+    Aluno: R
 
 Secretário:
-    Cornos:
-        - Nome: RW
-        - Email: RW
-        - CPF: RW
-        - Telefone: RW
-        - Endereco: RW
-        - Tipo Corno: R
-    Cursos:
-        - Nome: R
-        - Quantidade Ciclos: R
-        - Status: R
-        - Duracao: R
-        - Nivel: R
-    Turmas:
-        - Numero Turma: R
-        - Ciclo: R
-        - Periodo: R
-        - Curso: R
-        - Local: R
-    Locais:
-        - Nome: R
-        - Endereco: R
-        - Telefone: RW
-        - Responsavel: R
+  Cornos:
+    Nome: RW
+    Email: RW
+    CPF: RW
+    Telefone: RW
+    Endereco: RW
+    Tipo Corno: R
+    Criar: W
+    Listar: RW
+    Excluir: None
+  Cursos:
+    Nome: R
+    Quantidade Ciclos: R
+    Status: R
+    Duracao: R
+    Nivel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Turmas:
+    Numero Turma: R
+    Ciclo: R
+    Periodo: R
+    Curso: R
+    Local: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Locais:
+    Nome: R
+    Endereco: R
+    Telefone: RW
+    Responsavel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Tipos Corno:
+    Administrador: None
+    Diretor: R
+    Coordenador: R
+    Professor: R
+    Secretário: R
+    Aluno: RW
 
 Aluno:
-    Cornos:
-        - Nome: R
-        - Email: R
-        - CPF: None
-        - Telefone: None
-        - Endereco: None
-        - Tipo Corno: None
-    Cursos:
-        - Nome: R
-        - Quantidade Ciclos: R
-        - Status: R
-        - Duracao: R
-        - Nivel: R
-    Turmas:
-        - Numero Turma: None
-        - Ciclo: None
-        - Periodo: None
-        - Curso: None
-        - Local: None
-    Locais:
-        - Nome: R
-        - Endereco: R
-        - Telefone: R
-        - Responsavel: R
+  Cornos:
+    Nome: R
+    Email: R
+    CPF: None
+    Telefone: None
+    Endereco: None
+    Tipo Corno: None
+    Criar: None
+    Listar: None
+    Excluir: None
+  Cursos:
+    Nome: R
+    Quantidade Ciclos: R
+    Status: R
+    Duracao: R
+    Nivel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Turmas:
+    Numero Turma: None
+    Ciclo: None
+    Periodo: None
+    Curso: None
+    Local: None
+    Criar: None
+    Listar: None
+    Excluir: None
+  Locais:
+    Nome: R
+    Endereco: R
+    Telefone: R
+    Responsavel: R
+    Criar: None
+    Listar: R
+    Excluir: None
+  Tipos Corno:
+    Administrador: None
+    Diretor: None
+    Coordenador: None
+    Professor: None
+    Secretário: None
+    Aluno: R
