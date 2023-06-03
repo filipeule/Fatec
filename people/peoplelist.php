@@ -44,7 +44,7 @@ $consulta = $conn->query("SELECT * FROM cornos");
                <td headers='delete'>
                   <a href="/sistema_corno/people/persondelete.php?id=<?= $linha['id'] ?>" alt='Exluir' title='Excluir' class='campo-tabela jogar-para-direita'><img src='/sistema_corno/assets/img/delete.png' /></a>
                </td>
-         </tr>
+            </tr>
          <?php endwhile; ?>
       </tbody>
 

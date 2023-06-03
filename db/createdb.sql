@@ -147,7 +147,12 @@ VALUES
 INSERT INTO
   cornos (nome, email, senha, cpf, telefone, endereco, id_tipo_corno)
 VALUES
-  ('AdmCorno', 'corno@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 1);
+  ('AdmCorno', 'corno@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 1),
+  ('Diretor', 'diretor@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 2),
+  ('Coordenador', 'coordenador@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 3),
+  ('Professor', 'professor@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 4),
+  ('Secretário', 'secretario@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 5),
+  ('Aluno', 'aluno@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 6);
 
 INSERT INTO
   permissoes (secao, campo)
