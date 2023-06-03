@@ -132,4 +132,4 @@ VALUES
 INSERT INTO
   cornos (nome, email, senha, cpf, telefone, endereco, id_tipo_corno)
 VALUES
-  ('AdmCorno', 'corno@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 1);cornos
+  ('AdmCorno', 'corno@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 1);

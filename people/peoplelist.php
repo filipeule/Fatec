@@ -13,7 +13,6 @@ $consulta = $conn->query("SELECT * FROM cornos");
          <h2>Lista de Pessoas</h2>
       </caption>
       <tr>
-         <th>ID</th>
          <th>Nome</th>
          <th>Email</th>
          <th>CPF</th>
@@ -24,9 +23,6 @@ $consulta = $conn->query("SELECT * FROM cornos");
 
       <?php while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)): ?>
          <tr>
-            <td>
-               <?= $linha['id'] ?>
-            </td>
             <td>
                <?= $linha['nome'] ?>
             </td>

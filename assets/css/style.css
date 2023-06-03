@@ -8,7 +8,7 @@ body {
    margin: 0px;
    border: 0px;
    padding: 0px;
-   background-color: lightgray;
+   background-color: rgb(216, 216, 216);
 }
 
 fieldset {
@@ -80,9 +80,8 @@ p {
 }
 
 table {
-   display: block;
-   flex-direction: column;
-   align-items: center;
+   display: flex;
+   align-items: end;
    background-color: var(--cor-tecearia);
    padding: 10px;
    border-radius: 0px 0px 10px 10px;
