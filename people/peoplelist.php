@@ -18,13 +18,15 @@ $consulta = $conn->query("SELECT * FROM cornos");
             <th id='email'>Email</th>
             <th id='personal_id'>CPF</th>
             <th id='phone'>Telefone</th>
-            <th id='edit' class='jogar-pra-direita'>Editar</th>
-            <th id='delete' class='jogar-pra-direita'>Excluir</th>
+            <!-- <th id='edit' class='jogar-pra-direita'>Editar</th> -->
+            <th id='edit'>Editar</th>
+            <!-- <th id='delete' class='jogar-pra-direita'>Excluir</th> -->
+            <th id='delete'>Excluir</th>
          </tr>
       </thead>
 
       <tbody>
-         <?php while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)): ?>
+         <?php foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $linha): ?>
             <tr>
                <td headers='name'>
                   <?= $linha['nome'] ?>
@@ -45,7 +47,7 @@ $consulta = $conn->query("SELECT * FROM cornos");
                   <a href="/sistema_corno/people/persondelete.php?id=<?= $linha['id'] ?>" alt='Exluir' title='Excluir' class='campo-tabela jogar-para-direita'><img src='/sistema_corno/assets/img/delete.png' /></a>
                </td>
             </tr>
-         <?php endwhile; ?>
+         <?php endforeach; ?>
       </tbody>
 
    </table>

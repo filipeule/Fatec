@@ -12,8 +12,7 @@ if (isset($_POST['nome'])) {
 
 $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
 
-$permissionLevel = getPermissionLevel('Cornos', 'Tipo Corno');
-echo $permissionLevel;
+// $permissionLevel = getPermissionLevel('Cornos', 'Tipo Corno');
 
 ?>
 
@@ -45,13 +44,20 @@ echo $permissionLevel;
             <label class='labels' for='telefone'>Endereço</label>
             <input class='campo' type='text' name='endereco' placeholder='  Digite seu endereço:' required maxlength='100' value="<?= $usuario['endereco'] ?>">
          </div>
-         <?php if($permissionLevel == 1 or $permissionLevel == 3): ?>
+         <?php if(havePermission('Cornos', 'Tipo Corno', 'r')): ?>
          <div class="campos">
                <label class="labels" for="id_tipo_corno" data-placeholder="Escolha o tipo do chifrudo">Tipo Corno</label>
-               <select name="id_tipo_corno" id="seletorCadTurma" value="<?= $tipoCorno[$usuario['id_tipo_corno']] ?>">
-               <?php foreach ($tipoCorno as $tipo): ?>
-                  <option value="<?= $tipo['id'] ?>"><?= $tipo['descricao'] ?></option>
-               <?php endforeach; ?>
+
+               <?php 
+                  $disabled = 'disabled';
+                  if(havePermission('Cornos', 'Tipo Corno', 'w')) {
+                     $disabled = '';
+                  }
+               ?>
+               <select name="id_tipo_corno" id="seletorCadTurma" value="<?= $tipoCorno[$usuario['id_tipo_corno']] ?>"<?=$disabled?>>
+                  <?php foreach ($tipoCorno as $tipo): ?>
+                     <option value="<?= $tipo['id'] ?>"><?= $tipo['descricao'] ?></option>
+                  <?php endforeach; ?>
                </select>
          </div>
          <?php endif; ?>
