@@ -3,11 +3,12 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 
-$consulta = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
-
 ?>
 
 <?php if (@validarSessao()): ?>
+   <?php
+   $consulta = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
+   ?>
    <fieldset class="cadastroForm">
       <legend class="formulario">Pesquisar Corno</legend>
       <form name="form1" action="/sistema_corno/people/personsearchresult.php" method="post">

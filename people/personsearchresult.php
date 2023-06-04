@@ -4,7 +4,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functions.php");
 
-
 ?>
 
 <?php if (@validarSessao()): ?>

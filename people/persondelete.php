@@ -3,16 +3,11 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 
-if (isset($_POST['nome'])) {
-  $usuario = $conn->query("SELECT * FROM cornos WHERE nome LIKE '%{$_POST['nome']}%'")->fetch(PDO::FETCH_ASSOC);
-} else {
-  $usuario = $conn->query("SELECT * FROM cornos WHERE id = {$_GET['id']}")->fetch(PDO::FETCH_ASSOC);
-}
-$tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
-
 ?>
 <?php if (@validarSessao()): ?>
   <?php
+  $usuario = $conn->query("SELECT * FROM cornos WHERE id = {$_GET['id']}")->fetch(PDO::FETCH_ASSOC);
+  $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
   $usuario_tipo_corno = getCuckoldTypeById($usuario['id_tipo_corno']);
   $editPermission = (havePermission('Tipos Corno', $usuario_tipo_corno, 'w') and $usuario_tipo_corno != 'Administrador');
   ?>

@@ -3,11 +3,12 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 
-$tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
-
 ?>
 
 <?php if (@validarSessao()): ?>
+   <?php
+   $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
+   ?>
    <?php if (havePermission('Cornos', 'Criar', 'w')): ?>
       <fieldset class="cadastroForm">
          <legend>Cadastro de Cornos</legend>
