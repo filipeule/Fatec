@@ -29,22 +29,12 @@ function getPermissionLevel($secao, $campo)
   return $permissionLevel;
 }
 
-function checkFieldDisabled($secao, $campo)
+function setStringIfTrue($string, $flag)
 {
-  $disabled = 'disabled';
-  if (havePermission($secao, $campo, 'w')) {
-    $disabled = '';
+  if ($flag) {
+    return $string;
   }
-  return $disabled;
-}
-
-function checkSelected($id, $otherId)
-{
-  $selected = '';
-  if ($id == $otherId) {
-    $selected = 'selected';
-  }
-  return $selected;
+  return '';
 }
 
 function getInfo($field, $table, $targetColumn, $target)

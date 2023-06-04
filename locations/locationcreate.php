@@ -23,7 +23,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
             </div>
             <div class="campos">
                <label class="labels" for="responsavel">Responsável</label>
-               <input class="campo" type="text" name="responsavel" placeholder="  Digite o chifrudo responsável:" required maxlength="100">
+               <input class="campo" type="text" name="responsavel" placeholder="  Digite o chifrudo responsável:" required
+                  maxlength="100">
             </div>
             <div class="listaBotoes">
                <input class="botoes" type="submit" value="Enviar">

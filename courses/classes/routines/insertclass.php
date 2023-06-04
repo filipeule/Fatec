@@ -3,7 +3,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 
 try {
-?>
+   ?>
    <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
       <?php if (isset($_POST['nome']) && isset($_POST['nivel']) && isset($_POST['faixaetariaminima']) && isset($_POST['faixaetariamaxima']) && isset($_POST['status'])): ?>
          <?php
@@ -32,12 +32,14 @@ try {
       <?php endif; ?>
    <?php endif; ?>
 
-<?php
+   <?php
 } catch (PDOException $e) {
-?>
+   ?>
    <p>Hacker FDP</p>
-   <p><?= $e->getMessage() ?></p>
-<?php
+   <p>
+      <?= $e->getMessage() ?>
+   </p>
+   <?php
 }
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/footer.php");

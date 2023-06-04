@@ -16,7 +16,7 @@ try {
 
          $varEmail = testarEntrada($_POST['email']);
          $varSenha = testarEntrada($_POST['senha']);
-         
+
          $sql = "SELECT * FROM cornos WHERE email = ? AND senha = ?";
          $stmt = $conn->prepare($sql);
          $stmt->bindParam(1, $varEmail, PDO::PARAM_STR);
@@ -51,10 +51,12 @@ try {
 
    <?php
 } catch (Exception $e) {
-?>
-   <p class="erro">Ocorreu um erro: <?= $e->getMessage() ?></p>
+   ?>
+   <p class="erro">Ocorreu um erro:
+      <?= $e->getMessage() ?>
+   </p>
 
-<?php
+   <?php
 }
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/footer.php");

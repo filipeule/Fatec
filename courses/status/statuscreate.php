@@ -10,7 +10,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
          <div class="formulario">
             <div class="campos">
                <label class="labels" for="descricao">Descrição</label>
-               <input class="campo" type="text" name="descricao" placeholder="  Digite a descrição:" required maxlength="100">
+               <input class="campo" type="text" name="descricao" placeholder="  Digite a descrição:" required
+                  maxlength="100">
             </div>
             <div class="listaBotoes">
                <input class="botoes" type="submit" value="Enviar">

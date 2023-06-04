@@ -11,7 +11,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
          <div class="formulario">
             <div class="campos">
                <label class="labels" for="nome">Nome</label>
-               <input class="campo" type="text" name="nome" placeholder="  Digite o nome do curso:" required maxlength="200">
+               <input class="campo" type="text" name="nome" placeholder="  Digite o nome do curso:" required
+                  maxlength="200">
             </div>
             <div class="campos">
                <label class="labels" for="nivel">Nivel</label>
@@ -19,25 +20,27 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
             </div>
             <div class="campos">
                <label class="labels" for="faixaetariaminima">Faixa Etária Mínima</label>
-               <input class="campo" type="number" name="faixaetariaminima" placeholder="  Digite a faixa etária mínima:" required maxlength="11">
+               <input class="campo" type="number" name="faixaetariaminima" placeholder="  Digite a faixa etária mínima:"
+                  required maxlength="11">
             </div>
             <div class="campos">
                <label class="labels" for="faixaetariamaxima">Faixa Etária Máxima</label>
-               <input class="campo" type="number" name="faixaetariamaxima" placeholder="  Digite a faixa etária máxima:" required maxlength="11">
+               <input class="campo" type="number" name="faixaetariamaxima" placeholder="  Digite a faixa etária máxima:"
+                  required maxlength="11">
             </div>
             <div class="campos">
                <label class="labels" for="status">Status</label>
                <select name="status" id="seletorCadTurma">
-               <?php
+                  <?php
 
-               require_once("/common/dbconnection.php");
+                  require_once("/common/dbconnection.php");
 
-               $consulta = $conn->query("SELECT * FROM tbstatus order by descricao");
+                  $consulta = $conn->query("SELECT * FROM tbstatus order by descricao");
 
-               ?>
-               <?php while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)): ?>
-                  <option value="<?= $linha['id'] ?>"><?= $linha['descricao'] ?></option>"
-               <?php endwhile; ?>
+                  ?>
+                  <?php while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)): ?>
+                     <option value="<?= $linha['id'] ?>"><?= $linha['descricao'] ?></option>"
+                  <?php endwhile; ?>
                </select>
             </div>
             <div class="listaBotoes">
