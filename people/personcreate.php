@@ -5,11 +5,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php
 
 ?>
 
-<?php if (@validarSessao()): ?>
+<?php if (@validarSessao()) : ?>
    <?php
    $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
    ?>
-   <?php if (havePermission('Cornos', 'Criar', 'w')): ?>
+   <?php if (havePermission('Cornos', 'Criar', 'w')) : ?>
       <fieldset class="cadastroForm">
          <legend>Cadastro de Cornos</legend>
          <form name="form1" action="/sistema_corno/people/routines/insertperson.php" method="post">
@@ -36,21 +36,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php
                </div>
                <div class="campos">
                   <label class="labels" for="endereco">Endereço</label>
-                  <input class="campo" type="text" name="endereco" placeholder="Digite seu endereço:" required
-                     maxlength="100">
+                  <input class="campo" type="text" name="endereco" placeholder="Digite seu endereço:" required maxlength="100">
                </div>
-               <?php if (havePermission('Cornos', 'Tipo Corno', 'r')): ?>
+               <?php if (havePermission('Cornos', 'Tipo Corno', 'r')) : ?>
                   <div class="campos">
                      <label class="labels" for="id_tipo_corno" data-placeholder="Escolha o tipo do chifrudo">Tipo Corno</label>
                      <select class="campo" name="id_tipo_corno" id="id_tipo_corno">
-                        <?php foreach ($tipoCorno as $tipo): ?>
-                           <?php if (havePermission('Tipos Corno', $tipo['descricao'], 'w')): ?>
+                        <?php foreach ($tipoCorno as $tipo) : ?>
+                           <?php if (havePermission('Tipos Corno', $tipo['descricao'], 'w')) : ?>
                               <option value="<?= $tipo['id'] ?>"><?= $tipo['descricao'] ?></option>
                            <?php endif; ?>
                         <?php endforeach; ?>
                      </select>
-                  <?php endif; ?>
-               </div>
+                  </div>
+               <?php endif; ?>
                <div class="listaBotoes">
                   <input class="botoes" type="submit" value="Enviar">
                   <input class="botoes" type="reset" value="Limpar">
@@ -58,10 +57,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php
             </div>
       </fieldset>
       </form>
-   <?php else: ?>
+   <?php else : ?>
       <p>Forbidden.</p>
    <?php endif; ?>
-<?php else: ?>
+<?php else : ?>
    <p>Conecte-se para visualizar esta página.</p>
 <?php endif; ?>
 
