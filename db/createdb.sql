@@ -427,3 +427,31 @@ VALUES
   (36, 6, 0),
   (37, 6, 0),
   (38, 6, 1);
+
+INSERT INTO
+  curso_status (descricao)
+VALUES
+  ('Ativo'),
+  ('Inativo'),
+  ('Cancelado');
+
+INSERT INTO
+  duracao_ciclo (descricao)
+VALUES
+  ('Semestral'),
+  ('Anual'),
+  ('40 horas'),
+  ('80 horas'),
+  ('120 horas');
+
+INSERT INTO
+  nivel (descricao)
+VALUES
+  ('Profissionalizante'),
+  ('Técnico'),
+  ('Tecnólogo'),
+  ('Licenciatura'),
+  ('Bacharelado'),
+  ('Especialização'),
+  ('Mestrado'),
+  ('Doutorado');
