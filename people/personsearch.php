@@ -10,7 +10,7 @@ $consulta = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
 <?php if (@validarSessao()): ?>
    <fieldset class="cadastroForm">
       <legend class="formulario">Pesquisar Corno</legend>
-      <form name="form1" action="/sistema_corno/people/personedit.php" method="post">
+      <form name="form1" action="/sistema_corno/people/personsearchresult.php" method="post">
          <div class="formulario">
             <div class="campos">
                <label class="labels" for="nome">Nome</label>

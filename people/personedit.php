@@ -4,11 +4,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functions.php");
 
-if (isset($_POST['nome'])) {
-  $usuario = $conn->query("SELECT * FROM cornos WHERE nome LIKE '%{$_POST['nome']}%'")->fetch(PDO::FETCH_ASSOC);
-} else {
-  $usuario = $conn->query("SELECT * FROM cornos WHERE id = {$_GET['id']}")->fetch(PDO::FETCH_ASSOC);
-}
 
 
 // $permissionLevel = getPermissionLevel('Cornos', 'Tipo Corno');
@@ -16,12 +11,19 @@ if (isset($_POST['nome'])) {
 ?>
 <?php if (@validarSessao()): ?>
   <?php
+  if (isset($_POST['nome'])) {
+    $usuario = $conn->query("SELECT * FROM cornos WHERE nome LIKE '%{$_POST['nome']}%'")->fetch(PDO::FETCH_ASSOC);
+  } else {
+    $usuario = $conn->query("SELECT * FROM cornos WHERE id = {$_GET['id']}")->fetch(PDO::FETCH_ASSOC);
+  }
   $usuario_tipo_corno = getCuckoldTypeById($usuario['id_tipo_corno']);
+  $readPermission = havePermission('Tipos Corno', $usuario_tipo_corno, 'r');
   $editPermission = havePermission('Tipos Corno', $usuario_tipo_corno, 'w');
   $readonly = setStringIfTrue('readonly', !$editPermission);
 
   $tipoCorno = $conn->query("SELECT * FROM tipos_corno")->fetchAll();
   ?>
+  <?php if ($readPermission): ?>
   <fieldset class='cadastroForm'>
     <legend class='formulario'>Editar Corno</legend>
     <form name='form1' action='/sistema_corno/people/routines/editperson.php' method='post'>
@@ -31,7 +33,7 @@ if (isset($_POST['nome'])) {
           <input class='campo' type='number' name='id' placeholder='ID do usuário' value="<?= $usuario['id'] ?>" readonly>
         </div>
         <?php if (havePermission('Cornos', 'Nome', 'r')): ?>
-          <?php $readonly = setStringIfTrue('readonly', !havePermission('Cornos', 'Nome', 'w')) ?>
+          <?php $readonly = setStringIfTrue('readonly', (!havePermission('Cornos', 'Nome', 'w') or !$editPermission)) ?>
           <div class='campos'>
             <label class='labels' for='nome'>Nome</label>
             <input class='campo' type='text' name='nome' placeholder='  Digite seu nome:' required maxlength='100'
@@ -39,7 +41,7 @@ if (isset($_POST['nome'])) {
           </div>
         <?php endif; ?>
         <?php if (havePermission('Cornos', 'Email', 'r')): ?>
-          <?php $readonly = setStringIfTrue('readonly', !havePermission('Cornos', 'Email', 'w')) ?>
+          <?php $readonly = setStringIfTrue('readonly', (!havePermission('Cornos', 'Email', 'w') or !$editPermission)) ?>
           <div class='campos'>
             <label class='labels' for='email'>Email</label>
             <input class='campo' type='text' name='email' placeholder='  Digite seu email:' required maxlength='300'
@@ -47,7 +49,7 @@ if (isset($_POST['nome'])) {
           </div>
         <?php endif; ?>
         <?php if (havePermission('Cornos', 'CPF', 'r')): ?>
-          <?php $readonly = setStringIfTrue('readonly', !havePermission('Cornos', 'CPF', 'w')) ?>
+          <?php $readonly = setStringIfTrue('readonly', (!havePermission('Cornos', 'CPF', 'w') or !$editPermission)) ?>
           <div class='campos'>
             <label class='labels' for='cpf'>CPF</label>
             <input class='campo' type='text' name='cpf' placeholder='  Digite seu CPF:' required maxlength='14'
@@ -55,7 +57,7 @@ if (isset($_POST['nome'])) {
           </div>
         <?php endif; ?>
         <?php if (havePermission('Cornos', 'Telefone', 'r')): ?>
-          <?php $readonly = setStringIfTrue('readonly', !havePermission('Cornos', 'Telefone', 'w')) ?>
+          <?php $readonly = setStringIfTrue('readonly', (!havePermission('Cornos', 'Telefone', 'w') or !$editPermission)) ?>
           <div class='campos'>
             <label class='labels' for='telefone'>Telefone</label>
             <input class='campo' type='tel' name='telefone' placeholder='  Digite seu telefone:' required maxlength='11'
@@ -63,7 +65,7 @@ if (isset($_POST['nome'])) {
           </div>
         <?php endif; ?>
         <?php if (havePermission('Cornos', 'Endereco', 'r')): ?>
-          <?php $readonly = setStringIfTrue('readonly', !havePermission('Cornos', 'Endereco', 'w')) ?>
+          <?php $readonly = setStringIfTrue('readonly', (!havePermission('Cornos', 'Endereco', 'w') or !$editPermission)) ?>
           <div class='campos'>
             <label class='labels' for='endereco'>Endereço</label>
             <input class='campo' type='text' name='endereco' placeholder='  Digite seu endereço:' required maxlength='100'
@@ -98,6 +100,9 @@ if (isset($_POST['nome'])) {
       </div>
     </form>
   </fieldset>
+  <?php else: ?>
+    <p>Forbidden.</p>
+  <?php endif; ?>
 <?php else: ?>
   <p>Conecte-se para visualizar esta página.</p>
 <?php endif; ?>
