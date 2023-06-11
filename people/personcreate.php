@@ -32,7 +32,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php
                </div>
                <div class="campos">
                   <label class="labels" for="telefone">Telefone</label>
-                  <input class="campo" type="tel" name="telefone" placeholder="Digite seu telefone:" required maxlength="11">
+                  <input class="campo" type="text" name="telefone" placeholder="Digite seu telefone:" required maxlength="11">
                </div>
                <div class="campos">
                   <label class="labels" for="endereco">Endereço</label>

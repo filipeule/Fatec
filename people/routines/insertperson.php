@@ -12,11 +12,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(1, $_POST['nome'], PDO::PARAM_STR);
   $stmt->bindParam(2, $_POST['email'], PDO::PARAM_STR);
-  $stmt->bindParam(3, $_POST['cpf'], PDO::PARAM_STR);
-  $stmt->bindParam(4, $_POST['telefone'], PDO::PARAM_STR);
-  $stmt->bindParam(5, $_POST['endereco'], PDO::PARAM_STR);
-  $stmt->bindParam(6, $_POST['id_tipo_corno'], PDO::PARAM_INT);
-  $stmt->bindParam(7, $_POST['id'], PDO::PARAM_INT);
+  $stmt->bindParam(3, $_POST['senha'], PDO::PARAM_STR);
+  $stmt->bindParam(4, $_POST['cpf'], PDO::PARAM_STR);
+  $stmt->bindParam(5, $_POST['telefone'], PDO::PARAM_STR);
+  $stmt->bindParam(6, $_POST['endereco'], PDO::PARAM_STR);
+  $stmt->bindParam(7, $_POST['id_tipo_corno'], PDO::PARAM_INT);
   $success = $stmt->execute();
 
   ?>

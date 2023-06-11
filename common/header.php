@@ -53,9 +53,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functio
                <li class="topo-botoes">
                   <a href="">Unidades</a>
                   <ul class="submenu-list">
-                     <li><a href="/sistema_corno/locations/locationcreate.php">Cadastrar</a></li>
-                     <li><a href="/sistema_corno/locations/locationlist.php">Listar</a></li>
-                     <li><a href="/sistema_corno/locations/locationsearch.php">Consultar</a></li>
+                     <?php if (havePermission('Locais', 'Criar', 'w')): ?>
+                        <li><a href="/sistema_corno/locations/locationcreate.php">Cadastrar</a></li>
+                     <?php endif; ?>
+                     <?php if (havePermission('Locais', 'Listar', 'r')): ?>
+                        <li><a href="/sistema_corno/locations/locationslist.php">Listar</a></li>
+                     <?php endif; ?>
+                     <?php if (havePermission('Locais', 'Listar', 'r')): ?>
+                        <li><a href="/sistema_corno/locations/locationsearch.php">Consultar</a></li>
+                     <?php endif; ?>
                   </ul>
                </li>
                <li class="topo-botoes"><a href="logout.php">
