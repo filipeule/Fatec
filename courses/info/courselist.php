@@ -9,7 +9,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functio
 <?php if (@validarSessao()) : ?>
     <?php
     $consulta = $conn->query("SELECT c.id, c.nome curso, n.descricao nivel, d.descricao ciclo, c.qtd_ciclos qtdCiclos, s.descricao 'status' FROM cursos c, nivel n, duracao_ciclo d, curso_status s WHERE c.id_nivel = n.id and c.id_duracao_ciclo = d.id and c.id_status = s.id");
-    $editPermission = havePermission('Cursos', 'Listar', 'w');
+    $editPermission = havePermission('Cursos', 'Listar', 'r');
     $deletePermission = havePermission('Cursos', 'Excluir', 'w');
 
     $namePermission = havePermission('Cursos', 'Nome', 'r');
