@@ -20,7 +20,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
             </div>
             <div class="listaBotoes">
                 <input class="botoes" type="submit" value="Conectar">
-                <button class="botoes" type="button" value="Cadastrar"><a href="cadastrar.php">Cadastrar</a></button>
+                <button class="botoes" type="reset" value="Limpar">Limpar</button>
             </div>
         </div>
     </form>

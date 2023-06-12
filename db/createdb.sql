@@ -155,11 +155,6 @@ VALUES
   ('Aluno', 'aluno@corno', 'corno', '69696969696', '69969696969', 'Rua dos Cornos, 69, Jardim Chifrudo', 6);
 
 INSERT INTO
-  cursos (nome, qtd_ciclos, id_status, id_duracao_ciclo, id_nivel)
-VALUES
-  ('Cornologia', 1, 1, 1, 1);
-
-INSERT INTO
   permissoes (secao, campo)
 VALUES
   ('Cornos', 'Nome'),
@@ -460,3 +455,8 @@ VALUES
   ('Especialização'),
   ('Mestrado'),
   ('Doutorado');
+
+INSERT INTO
+  cursos (nome, qtd_ciclos, id_status, id_duracao_ciclo, id_nivel)
+VALUES
+  ('Cornologia', 1, 1, 1, 1);

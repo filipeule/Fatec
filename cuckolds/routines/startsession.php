@@ -32,17 +32,17 @@ session_start();
             $linha = $stmt->fetch(PDO::FETCH_ASSOC);
             $_SESSION['nomeUsuario'] = $linha['nome'];
             $_SESSION['idUsuario'] = $linha['id'];
-            header("location:/sistema_corno/people/peoplelist.php");
+            header("location:/sistema_corno/cuckolds/cuckoldupdate.php");
             ?>
          <?php else : ?>
             <?php session_unset(); ?>
 
-            <p>Login inválido</p>
+            <p>Login inválido. Clique <a href='/sistema_corno/index.php'>aqui</a> para voltar.</p>
          <?php endif; ?>
 
          <!-- fim do if -->
       <?php else : ?>
-         <p>Você deve preencher todos os campos do formulário, clique <a href='login.php'>aqui</a> para voltar.</p>
+         <p>Você deve preencher todos os campos do formulário, clique <a class="linkVoltar" href='login.php'>aqui</a> para voltar.</p>
       <?php endif; ?>
       <!-- fim do if server post -->
    <?php else : ?>
