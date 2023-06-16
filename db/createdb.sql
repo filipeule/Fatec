@@ -459,4 +459,17 @@ VALUES
 INSERT INTO
   cursos (nome, qtd_ciclos, id_status, id_duracao_ciclo, id_nivel)
 VALUES
-  ('Cornologia', 1, 1, 1, 1);
+  ('Cornologia', 6, 1, 1, 1);
+
+INSERT INTO
+  periodo (descricao)
+VALUES
+  ('Matutino'),
+  ('Vespertino'),
+  ('Noturno'),
+  ('Integral');
+
+INSERT INTO
+  locais (nome, endereco, telefone, id_responsavel)
+VALUES
+  ('Matriz', 'Rua dos Cornos, 239', '17998134545', 2);
