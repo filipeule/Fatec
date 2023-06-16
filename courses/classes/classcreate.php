@@ -33,24 +33,24 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php
                   </select>
                </div>
                <div class="campos">
-                  <label class="labels" for="qtd_ciclos" data-placeholder="Escolha a quantidade de ciclos">Número
+                  <label class="labels" for="nr_ciclo" data-placeholder="Escolha o ciclo da turma">Número
                      Ciclo</label>
-                     <select class="campo" name="qtd_ciclos" id="qtd_ciclos">
-                        <?php foreach (range(1, 10) as $qtd): ?>
-                           <option value="<?= $qtd ?>"><?= $qtd ?></option>
-                           <?php endforeach; ?>
-                        </select>
-                     </div>
-                     <div class="campos">
-                        <label class="labels" for="id_local" data-placeholder="Escolha o local">Local</label>
-                        <select class="campo" name="id_local" id="id_local">
-                           <?php foreach ($locais as $local): ?>
-                              <option value="<?= $local['id'] ?>"><?= $local['nome'] ?></option>
-                           <?php endforeach; ?>
-                        </select>
-                     </div>
-                     <div class="listaBotoes">
-                        <input class="botoes" type="submit" value="Enviar">
+                  <select class="campo" name="nr_ciclo" id="nr_ciclo">
+                     <?php foreach (range(1, 10) as $qtd): ?>
+                        <option value="<?= $qtd ?>"><?= $qtd ?></option>
+                     <?php endforeach; ?>
+                  </select>
+               </div>
+               <div class="campos">
+                  <label class="labels" for="id_local" data-placeholder="Escolha o local">Local</label>
+                  <select class="campo" name="id_local" id="id_local">
+                     <?php foreach ($locais as $local): ?>
+                        <option value="<?= $local['id'] ?>"><?= $local['nome'] ?></option>
+                     <?php endforeach; ?>
+                  </select>
+               </div>
+               <div class="listaBotoes">
+                  <input class="botoes" type="submit" value="Enviar">
                   <input class="botoes" type="reset" value="Limpar">
                </div>
             </div>
