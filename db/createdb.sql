@@ -473,3 +473,8 @@ INSERT INTO
   locais (nome, endereco, telefone, id_responsavel)
 VALUES
   ('Matriz', 'Rua dos Cornos, 239', '17998134545', 2);
+
+INSERT INTO
+  turmas (id_periodo, ciclo, id_curso, id_local)
+VALUES
+  (1, 6, 1, 1);
