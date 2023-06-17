@@ -70,7 +70,7 @@ Diretor:
     Curso: R
     Local: R
     Criar: W
-    Listar: RW
+    Listar: R
     Excluir: W
   Locais:
     Nome: R

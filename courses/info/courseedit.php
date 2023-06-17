@@ -105,7 +105,7 @@ $curso = $conn->query("SELECT * FROM cursos WHERE id = {$_GET['id']}")->fetch();
                         </div>
                     <?php endif; ?>
                     <div class="listaBotoes">
-                        <?php if (havePermission('Locais', 'Listar', 'w')): ?>
+                        <?php if (havePermission('Cursos', 'Listar', 'w')): ?>
                             <input class='botoes' type='submit' value='Confirmar'>
                         <?php endif; ?>
                         <button class='botoes'><a href="javascript:history.back()">Voltar</a></button>

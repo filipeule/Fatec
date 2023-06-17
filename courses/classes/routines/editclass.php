@@ -3,58 +3,45 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 
-$sql = "UPDATE cornos SET ";
-$nomeSet = isset($_POST['nome']);
-$emailSet = isset($_POST['email']);
-$cpfSet = isset($_POST['cpf']);
-$telefoneSet = isset($_POST['telefone']);
-$enderecoSet = isset($_POST['endereco']);
-$idTipoCornoSet = isset($_POST['id_tipo_corno']);
+$sql = "UPDATE turmas SET ";
 $idSet = isset($_POST['id']);
+$periodoSet = isset($_POST['id_periodo']);
+$cursoSet = isset($_POST['id_curso']);
+$nrCicloSet = isset($_POST['ciclo']);
+$localSet = isset($_POST['local']);
 $count = 1;
 
-if ($nomeSet)
-  $sql .= "nome = ?, ";
-if ($emailSet)
-  $sql .= "email = ?, ";
-if ($cpfSet)
-  $sql .= "cpf = ?, ";
-if ($telefoneSet)
-  $sql .= "telefone = ?, ";
-if ($enderecoSet)
-  $sql .= "endereco = ?, ";
-if ($idTipoCornoSet)
-  $sql .= "id_tipo_corno = ?, ";
+if ($periodoSet)
+  $sql .= "id_periodo = ?, ";
+if ($cursoSet)
+  $sql .= "id_curso = ?, ";
+if ($nrCicloSet)
+  $sql .= "ciclo = ?, ";
+if ($localSet)
+  $sql .= "local = ?, ";
 
 $sql = rtrim($sql, ", \t\n");
 
 if ($idSet) {
-  $sql .= "WHERE id = ?";
+  $sql .= " WHERE id = ?";
 }
 
+
 $stmt = $conn->prepare($sql);
-if ($nomeSet) {
-  $stmt->bindParam($count, $_POST['nome'], PDO::PARAM_STR);
+if ($periodoSet) {
+  $stmt->bindParam($count, $_POST['id_periodo'], PDO::PARAM_INT);
   $count++;
 }
-if ($emailSet) {
-  $stmt->bindParam($count, $_POST['email'], PDO::PARAM_STR);
+if ($cursoSet) {
+  $stmt->bindParam($count, $_POST['id_curso'], PDO::PARAM_INT);
   $count++;
 }
-if ($cpfSet) {
-  $stmt->bindParam($count, $_POST['cpf'], PDO::PARAM_STR);
+if ($nrCicloSet) {
+  $stmt->bindParam($count, $_POST['ciclo'], PDO::PARAM_INT);
   $count++;
 }
-if ($telefoneSet) {
-  $stmt->bindParam($count, $_POST['telefone'], PDO::PARAM_STR);
-  $count++;
-}
-if ($enderecoSet) {
-  $stmt->bindParam($count, $_POST['endereco'], PDO::PARAM_STR);
-  $count++;
-}
-if ($idTipoCornoSet) {
-  $stmt->bindParam($count, $_POST['id_tipo_corno'], PDO::PARAM_INT);
+if ($localSet) {
+  $stmt->bindParam($count, $_POST['local'], PDO::PARAM_INT);
   $count++;
 }
 if ($idSet) {
@@ -64,11 +51,11 @@ if ($idSet) {
 $success = $stmt->execute();
 
 ?>
-  <?php if ($success): ?>
-    <p>Registro atualizado com sucesso! Clique <a class="linkVoltar" href="/sistema_corno/people/peoplelist.php">aqui</a> para voltar.</p>
-  <?php else: ?>
-    <p>Erro ao atualizar registro: <?= $stmt->error ?></p>
-  <?php endif; ?>
+<?php if ($success) : ?>
+  <p>Registro atualizado com sucesso! Clique <a class="linkVoltar" href="/sistema_corno/courses/classes/classlist.php">aqui</a> para voltar.</p>
+<?php else : ?>
+  <p>Erro ao atualizar registro: <?= $stmt->error ?></p>
+<?php endif; ?>
 
 <?php
 
