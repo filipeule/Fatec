@@ -15,7 +15,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functio
     <?php if (havePermission('Locais', 'Listar', 'r')) : ?>
         <table>
             <caption>
-                Lista de Pessoas
+                Lista de Unidades
             </caption>
             <thead>
                 <tr>
