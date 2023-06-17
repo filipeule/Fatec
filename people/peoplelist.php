@@ -4,13 +4,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/header.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/dbconnection.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functions.php");
 
-$consulta = $conn->query("SELECT * FROM cornos");
-$editPermission = havePermission('Cornos', 'Listar', 'w');
-$deletePermission = havePermission('Cornos', 'Excluir', 'w');
-
 ?>
 
 <?php if (@validarSessao()): ?>
+  <?php
+  $consulta = $conn->query("SELECT * FROM cornos");
+  $editPermission = havePermission('Cornos', 'Listar', 'r');
+  $deletePermission = havePermission('Cornos', 'Excluir', 'w');
+  ?>
   <?php if (havePermission('Cornos', 'Listar', 'r')): ?>
     <table>
       <caption>
@@ -36,9 +37,9 @@ $deletePermission = havePermission('Cornos', 'Excluir', 'w');
       <tbody>
         <?php foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $linha): ?>
           <?php
-          $cuckoldtype = getCuckoldTypeById($linha['id']);
+          $cuckoldtype = getCuckoldTypeById($linha['id_tipo_corno']);
           $editHidden = setStringIfTrue('hidden', !havePermission('Tipos Corno', $cuckoldtype, 'r'));
-          $deleteHidden = setStringIfTrue('hidden', !havePermission('Tipos Corno', $cuckoldtype, 'w'));
+          $deleteHidden = setStringIfTrue('hidden', (!havePermission('Tipos Corno', $cuckoldtype, 'w') or $cuckoldtype == 'Administrador'));
 
           ?>
           <tr>
@@ -63,7 +64,7 @@ $deletePermission = havePermission('Cornos', 'Excluir', 'w');
             <?php if ($deletePermission): ?>
               <td headers='delete'>
                 <a href="/sistema_corno/people/persondelete.php?id=<?= $linha['id'] ?>" alt='Exluir' title='Excluir'
-                  class='campo-tabela jogar-para-direita'><img src='/sistema_corno/assets/img/delete.png' <?= $deleteHidden ?>/></a>
+                  class='campo-tabela jogar-para-direita'><img src='/sistema_corno/assets/img/delete.png' <?= $deleteHidden ?> /></a>
               </td>
             <?php endif; ?>
           </tr>

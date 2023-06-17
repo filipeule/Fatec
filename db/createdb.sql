@@ -231,7 +231,7 @@ VALUES
   (30, 1, 2),
   (31, 1, 3),
   (32, 1, 2),
-  (33, 1, 2),
+  (33, 1, 1),
   (34, 1, 3),
   (35, 1, 3),
   (36, 1, 3),
@@ -260,7 +260,7 @@ VALUES
   (21, 2, 1),
   (22, 2, 1),
   (23, 2, 2),
-  (24, 2, 3),
+  (24, 2, 1),
   (25, 2, 2),
   (26, 2, 1),
   (27, 2, 1),
@@ -427,3 +427,54 @@ VALUES
   (36, 6, 0),
   (37, 6, 0),
   (38, 6, 1);
+
+INSERT INTO
+  curso_status (descricao)
+VALUES
+  ('Ativo'),
+  ('Inativo'),
+  ('Cancelado');
+
+INSERT INTO
+  duracao_ciclo (descricao)
+VALUES
+  ('Semestral'),
+  ('Anual'),
+  ('40 horas'),
+  ('80 horas'),
+  ('120 horas');
+
+INSERT INTO
+  nivel (descricao)
+VALUES
+  ('Profissionalizante'),
+  ('Técnico'),
+  ('Tecnólogo'),
+  ('Licenciatura'),
+  ('Bacharelado'),
+  ('Especialização'),
+  ('Mestrado'),
+  ('Doutorado');
+
+INSERT INTO
+  cursos (nome, qtd_ciclos, id_status, id_duracao_ciclo, id_nivel)
+VALUES
+  ('Cornologia', 6, 1, 1, 1);
+
+INSERT INTO
+  periodo (descricao)
+VALUES
+  ('Matutino'),
+  ('Vespertino'),
+  ('Noturno'),
+  ('Integral');
+
+INSERT INTO
+  locais (nome, endereco, telefone, id_responsavel)
+VALUES
+  ('Matriz', 'Rua dos Cornos, 239', '17998134545', 2);
+
+INSERT INTO
+  turmas (id_periodo, ciclo, id_curso, id_local)
+VALUES
+  (1, 6, 1, 1);

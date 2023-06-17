@@ -21,41 +21,53 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functio
       <nav class="cabecalho">
          <ul>
             <?php if (validarSessao()): ?>
-               <li class="topo-botoes">
-                  <a>Pessoas</a>
-                  <ul class="submenu-list">
-                     <?php if (havePermission('Cornos', 'Criar', 'w')): ?>
-                        <li><a href="/sistema_corno/people/personcreate.php">Cadastrar</a></li>
-                     <?php endif; ?>
-                     <li><a href="/sistema_corno/people/personsearch.php">Consultar</a></li>
-                     <?php if (havePermission('Cornos', 'Listar', 'r')): ?>
+               <?php if (havePermission('Cornos', 'Listar', 'r')): ?>
+                  <li class="topo-botoes">
+                     <a>Pessoas</a>
+                     <ul class="submenu-list">
+                        <?php if (havePermission('Cornos', 'Criar', 'w')): ?>
+                           <li><a href="/sistema_corno/people/personcreate.php">Cadastrar</a></li>
+                        <?php endif; ?>
+                        <li><a href="/sistema_corno/people/personsearch.php">Consultar</a></li>
                         <li><a href="/sistema_corno/people/peoplelist.php">Listar</a></li>
-                     <?php endif; ?>
-                  </ul>
-               </li>
-               <li class="topo-botoes">
-                  <a href="">Cursos</a>
-                  <ul class="submenu-list">
-                     <li><a href="/sistema_corno/courses/status/statuscreate.php">Cadastrar</a></li>
-                     <li><a href="/sistema_corno/courses/status/statuslist.php">Listar</a></li>
-                  </ul>
-               </li>
-               <li class="topo-botoes">
-                  <a href="">Turmas</a>
-                  <ul class="submenu-list">
-                     <li><a href="/sistema_corno/courses/classes/classcreate.php">Cadastrar</a></li>
-                     <li><a href="/sistema_corno/courses/classes/classlist.php">Listar</a></li>
-                     <li><a href="/sistema_corno/courses/classes/classsearch.php">Consultar</a></li>
-                  </ul>
-               </li>
-               <li class="topo-botoes">
-                  <a href="">Unidades</a>
-                  <ul class="submenu-list">
-                     <li><a href="/sistema_corno/locations/locationcreate.php">Cadastrar</a></li>
-                     <li><a href="/sistema_corno/locations/locationlist.php">Listar</a></li>
-                     <li><a href="/sistema_corno/locations/locationsearch.php">Consultar</a></li>
-                  </ul>
-               </li>
+                     </ul>
+                  </li>
+               <?php endif; ?>
+               <?php if (havePermission('Cursos', 'Listar', 'r')): ?>
+                  <li class="topo-botoes">
+                     <a href="">Cursos</a>
+                     <ul class="submenu-list">
+                        <?php if (havePermission('Cursos', 'Criar', 'w')): ?>
+                           <li><a href="/sistema_corno/courses/info/coursecreate.php">Cadastrar</a></li>
+                        <?php endif; ?>
+                        <li><a href="/sistema_corno/courses/info/courselist.php">Listar</a></li>
+                     </ul>
+                  </li>
+               <?php endif; ?>
+               <?php if (havePermission('Turmas', 'Listar', 'r')): ?>
+                  <li class="topo-botoes">
+                     <a href="">Turmas</a>
+                     <ul class="submenu-list">
+                        <?php if (havePermission('Turmas', 'Criar', 'w')): ?>
+                           <li><a href="/sistema_corno/courses/classes/classcreate.php">Cadastrar</a></li>
+                        <?php endif; ?>
+                        <li><a href="/sistema_corno/courses/classes/classlist.php">Listar</a></li>
+                        <li><a href="/sistema_corno/courses/classes/classsearch.php">Consultar</a></li>
+                     </ul>
+                  </li>
+               <?php endif; ?>
+               <?php if (havePermission('Locais', 'Listar', 'r')): ?>
+                  <li class="topo-botoes">
+                     <a href="">Unidades</a>
+                     <ul class="submenu-list">
+                        <?php if (havePermission('Locais', 'Criar', 'w')): ?>
+                           <li><a href="/sistema_corno/locations/locationcreate.php">Cadastrar</a></li>
+                        <?php endif; ?>
+                        <li><a href="/sistema_corno/locations/locationslist.php">Listar</a></li>
+                        <li><a href="/sistema_corno/locations/locationsearch.php">Consultar</a></li>
+                     </ul>
+                  </li>
+               <?php endif; ?>
                <li class="topo-botoes"><a href="logout.php">
                      <?= $_SESSION['nomeUsuario'] ?>
                   </a>
