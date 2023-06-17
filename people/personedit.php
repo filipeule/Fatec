@@ -25,8 +25,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/sistema_corno/common/routines/functio
       <form name='form1' action='/sistema_corno/people/routines/editperson.php' method='post'>
         <div class='formulario'>
           <div class='campos'>
-            <label class='labels' for='id'>ID</label>
-            <input class='campo' type='number' name='id' placeholder='ID do usuário' value="<?= $usuario['id'] ?>" readonly>
+            <label class='labels' for='id' hidden>ID</label>
+            <input class='campo' type='number' name='id' placeholder='ID do usuário' value="<?= $usuario['id'] ?>" readonly hidden>
           </div>
           <?php if (havePermission('Cornos', 'Nome', 'r')): ?>
             <?php $readonly = setStringIfTrue('readonly', (!havePermission('Cornos', 'Nome', 'w') or !$editPermission)) ?>
